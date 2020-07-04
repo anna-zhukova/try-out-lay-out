@@ -1,0 +1,170 @@
+/* disable scrolling */
+/* https://stackoverflow.com/questions/28411499/disable-scrolling-on-body */
+/* if larger than 992px */
+@media only screen and (min-width: 992px) {
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@-webkit-keyframes blink { 50% { border: 0; }  }
+
+body {
+  background-color: #f6f6f6;
+  color: #111;
+  padding: 0;
+  text-align: center;
+}
+
+/* MENU STYLING */
+.row {
+  top: 0;
+}
+
+.logo {
+  cursor: copy;
+  margin-right: 1.5rem;
+}
+
+/* Centering items horizontally */
+.menu {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-item {
+  display: inline-block;
+  height: 2rem;
+}
+
+/* spacing in menu */
+.dropdown-toggle {
+  margin-right: 0.7rem;
+}
+
+.canvasRatio {
+  background-color: black;
+  font-size: 3rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+#landscape {
+  width: 3rem;
+}
+
+#portrait {
+  height: 3rem;
+}
+
+#delete {
+  font-size: 2rem;
+}
+
+/* dropdown styling */
+
+.dropdown-menu {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item, .dropdown-item:hover {
+  cursor: copy;
+}
+
+.dropdown-item.text, .dropdown-item.text:hover{
+  max-width: 150px;
+}
+
+.dropdown-item.shape-menu, .dropdown-item.shape-menu:hover {
+  max-width: 100px;
+  margin: 5px auto 5px;
+}
+
+/* STYLING ELEMENTS IN WORKING SPACE */
+
+#canvas {
+  /* https://stackoverflow.com/questions/1776915/how-to-center-absolutely-positioned-element-in-div */
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  /* under canvas */
+  background-color: white;
+  /* position: absolute; */
+  overflow: hidden;
+  pointer-events: none;
+  touch-action: none;
+  /* under canvas */
+}
+
+.canvas-item {
+  cursor: default;
+  /* under canvas */
+  pointer-events: auto;
+  /* under canvas */
+  position: absolute;
+  /* min-height: 5rem; */
+  touch-action: none;
+  user-select: none;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  /* This makes things *much* easier */
+  box-sizing: border-box;
+}
+
+.canvas-item.image {
+  width: 50%;
+}
+
+.canvas-item.text {
+  width: 20%;
+}
+
+.canvas-item.logo{
+  width: 10%;
+}
+
+.shape {
+  background-color: black;
+  height: 3rem;
+  width: 3rem;
+}
+
+.ellipse {
+  border-radius: 50%;
+}
+
+.canvas-item:hover {
+  opacity: 0.8;
+}
+
+.selected {
+  border: 2px solid Chartreuse;
+}
+
+/* error interactivity */
+.error-message-container {
+  color: #B22222;
+  font-size:  0.875rem;
+  text-align: left;
+  line-height: 1.5;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  /* max-height: 14vh;
+  overflow: scroll; */
+}
+
+.error-blink {
+  border: 1px solid red;
+  -webkit-animation: blink .5s step-end infinite alternate;
+}
+
+/* NEW FUNCTIONALITY */
+
+.line {
+  position: absolute;
+  background-color: #000000;
+}
