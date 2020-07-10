@@ -4,6 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>App</title>
+
+  <!-- Icon -->
+  <link rel="icon" href="images/icons/favicon.ico">
+
   <!-- Font Awesome Icons -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
@@ -18,6 +22,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/app.css">
+
 </head>
 
 <body>
@@ -45,29 +50,25 @@
 
   <section id="panel-menu">
     <div class="row">
-      <div class="col-lg-2 menu">
+      <div class="col-lg-3 menu">
         <!-- Set the aspect ratio. -->
         <button type="button" id="landscape" class="btn bttn canvasRatio"></button>
         <button type="button" id="portrait" class="btn bttn canvasRatio"></button>
         <button type="button" id="square" class="btn bttn canvasRatio"></button>
       </div>
 
-      <div class="col-lg-1 menu">
-        <button type="button" id="reset" class="btn btn-lg btn-dark bttn">Reset</button>
-      </div>
-
-      <div class="col-lg-9 menu">
-        <img class="menu-item logo" src="images/llogo.png" alt="logo">
+      <div class="col-lg-9 menu panel">
+        <img class="menu-item logo" src="images/icons/logo.svg" alt="logo">
 
 
         <!-- SHAPES -->
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" id="dropdownShapes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img class="menu-item" src="images/circle.png" alt="circle">
+            <img class="menu-item" src="images/icons/circle.svg" alt="circle">
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownShapes">
-            <a href="#"><img class="dropdown-item shape-menu circle" src="images/circle.png" alt="circle"></a>
-            <a href="#"><img class="dropdown-item shape-menu" src="images/square.png" alt="square"></a>
+            <a href="#"><img class="dropdown-item shape-menu circle" src="images/icons/circle.svg" alt="circle"></a>
+            <a href="#"><img class="dropdown-item shape-menu" src="images/icons/square.svg" alt="square"></a>
           </div>
         </div>
 
@@ -89,7 +90,7 @@
             <img class="menu-item" src="images/icons/text.svg" alt="text-icon">
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownText">
-            <a href="#"><img class="dropdown-item text header" src="images/text/heading-b.png" alt="heading"></a>
+            <a href="#"><img class="dropdown-item text header" src="images/icons/heading.svg" alt="heading"></a>
             <div class="dropdown-divider"></div>
             <a href="#"><img class="dropdown-item text left-sub" src="images/icons/sub-left.svg" alt="subtitle left"></a>
             <div class="dropdown-divider"></div>
@@ -106,13 +107,9 @@
         <button type="button" id="yellow" class="btn bttn recolor-bttn"></button>
         <button type="button" id="light" class="btn bttn recolor-bttn"></button>
         <button type="button" id="dark" class="btn bttn recolor-bttn"></button>
-        <button type="button" id="front" class="btn bttn-inverse clear"><img class="menu-item" src="images/icons/bfront.svg" alt="bring-front"></button>
-        <button type="button" id="delete" class="btn bttn-inverse clear"><img class="menu-item" src="images/icons/trash.svg" alt="trash"></button>
+        <button type="button" id="front" class="btn clear"><img class="menu-item" src="images/icons/bfront.svg" alt="bring-front"></button>
+        <button type="button" id="delete" class="btn clear"><img class="menu-item" src="images/icons/trash.svg" alt="trash"></button>
       </div>
-
-      <!-- <div class="col-lg-3 menu">
-        <button type="button" id="reset" class="btn btn-lg btn-dark bttn">Reset</button>
-      </div> -->
 
     </div>
   </section>
@@ -120,18 +117,106 @@
   <section id="working-space">
     <div class="row">
       <div class="col-lg-3">
-        <div class="error-message-container">
-          <p class="errors"></p>
+        <div class="message-container">
+
+          <a class="btn clear btn-border disabled" data-toggle="collapse" href="#border" role="button" aria-expanded="true" aria-controls="border">
+            Border
+          </a>
+          <div class="collapse" id="border"></div><br>
+
+          <a class="btn clear btn-balance disabled" data-toggle="collapse" href="#balance" role="button" aria-expanded="true" aria-controls="balance">
+            Composition Balance
+          </a>
+          <div class="collapse" id="balance"></div><br>
+
+
+          <a class="btn clear btn-text-size disabled" data-toggle="collapse" href="#text-size" role="button" aria-expanded="true" aria-controls="text-size">
+            Text size
+          </a>
+          <div class="collapse" id="text-size"></div><br>
+
+
+          <a class="btn clear btn-alignment disabled" data-toggle="collapse" href="#alignment" role="button" aria-expanded="true" aria-controls="alignment">
+            Alignment
+          </a>
+          <div class="collapse" id="alignment"></div><br>
+
+
+          <a class="btn clear btn-overlapping disabled" data-toggle="collapse" href="#overlapping" role="button" aria-expanded="true" aria-controls="overlapping">
+            Overlapping
+          </a>
+          <div class="collapse" id="overlapping"></div><br>
+
+          <p class="output"></p>
+
+          <p class="errorMessage output"></p>
+
         </div>
+
+        <button type="button" id="reset" class="btn btn-lg bttn center">Reset</button>
       </div>
-      <div class="col-lg-9">
-        <div id="canvas" style="width: 55vw; height: 40vw;"></div>
+      <div class="col-lg-9 canvas-container">
+        <div id="canvas" class="center" style="width: 65vw; height: 45vw;"></div>
       </div>
     </div>
   </section>
 
-  <button type="button" id="reset" class="btn btn-lg btn-dark bttn">Reset</button>
 
+  <!-- MODALS -->
+  <div class="modal fade" id="ratioModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h5 class="modal-title">Distorted aspect ratio</h5>
+          <p>Aspect ratio distortion might not be something you want to occure.
+            <br> Resize objects while holding down SHIFT to maintain original ratio. </p>
+          <button type="button" id="close-modal" class="btn bttn inverse" data-dismiss="modal">Got It</button>
+          <button type="button" id="undo" class="btn bttn" data-dismiss="modal">Undo Resize</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="textRatioModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h5 class="modal-title">Distorted aspect ratio</h5>
+          <p>Aspect ratio distortion occured. Text distortions decreases readability and cannot be tolerated.
+            <br> Resize objects while holding down SHIFT to maintain original ratio. </p>
+          <button type="button" id="close-modal" class="btn bttn inverse" data-dismiss="modal" disabled>Got It</button>
+          <button type="button" id="undoText" class="btn bttn" data-dismiss="modal">Undo Resize</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="balanceModal" tabindex="-1" role="dialog" aria-labelledby="balanceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="balanceModalLabel">Balance</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Symmetrical balance</p>
+          <img src="images/examples/balance-01.png" alt="">
+          <img src="images/examples/balance-03.png" alt="">
+          <img src="images/examples/balance-04.png" alt="">
+
+          <p>Asymmetrical balance</p>
+          <img src="images/examples/balance-06.png" alt="">
+          <img src="images/examples/balance-02.png" alt="">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bttn inverse" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
