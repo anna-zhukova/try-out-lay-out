@@ -9,43 +9,68 @@
   }
 }
 
-@-webkit-keyframes blink { 50% { border: 0; }  }
+@keyframes blink {
+  0%{opacity: 0;}
+  50%{opacity: .5;}
+  100%{opacity: 1;}
+}
 
 body {
   background-color: #f6f6f6;
-  color: #111;
-  padding: 0;
-  text-align: center;
 }
+
+/* https://stackoverflow.com/questions/1776915/how-to-center-absolutely-positioned-element-in-div */
+/* .center-content {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+} */
 
 /* MENU STYLING */
-.row {
-  top: 0;
-}
-
 .logo {
   cursor: copy;
-  margin-right: 1.5rem;
 }
 
-/* Centering items horizontally */
-.menu {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
+/* Styling items in the menu */
 .menu-item {
   display: inline-block;
   height: 2rem;
+  margin: auto 1rem;
 }
 
-/* spacing in menu */
+/* Centering items in the menu horizontally */
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+/* Spacing items in the menu */
 .dropdown-toggle {
   margin-right: 0.7rem;
 }
 
-.canvasRatio {
+/* Palette colors */
+#green, #green:hover {
+  background-color: #006400;
+}
+
+#yellow, #yellow:hover {
+  background-color: #EEB868;
+}
+
+#light, #light:hover {
+  background-color: #4682B4;
+}
+
+#dark, #dark:hover {
+  background-color: #083D77;
+}
+
+/* Canvas format buttons */
+.canvasRatio, .canvasRatio:hover {
   background-color: black;
   font-size: 3rem;
   height: 2rem;
@@ -60,22 +85,29 @@ body {
   height: 3rem;
 }
 
+/* Items manipulating icons */
 #delete {
   font-size: 2rem;
 }
 
-/* dropdown styling */
+#reset {
+  bottom: 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
 
+
+/* dropdown styling */
 .dropdown-menu {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
 }
 
 .dropdown-item, .dropdown-item:hover {
   cursor: copy;
-}
-
-.dropdown-item.text, .dropdown-item.text:hover{
-  max-width: 150px;
 }
 
 .dropdown-item.shape-menu, .dropdown-item.shape-menu:hover {
@@ -86,32 +118,23 @@ body {
 /* STYLING ELEMENTS IN WORKING SPACE */
 
 #canvas {
-  /* https://stackoverflow.com/questions/1776915/how-to-center-absolutely-positioned-element-in-div */
+  background-color: white;
+  pointer-events: none;
+  touch-action: none;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  /* under canvas */
-  background-color: white;
-  /* position: absolute; */
-  overflow: hidden;
-  pointer-events: none;
-  touch-action: none;
-  /* under canvas */
 }
 
 .canvas-item {
   cursor: default;
-  /* under canvas */
   pointer-events: auto;
-  /* under canvas */
   position: absolute;
-  /* min-height: 5rem; */
   touch-action: none;
   user-select: none;
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
-  /* This makes things *much* easier */
   box-sizing: border-box;
 }
 
@@ -119,12 +142,8 @@ body {
   width: 50%;
 }
 
-.canvas-item.text {
-  width: 20%;
-}
-
 .canvas-item.logo{
-  width: 10%;
+  width: 15%;
 }
 
 .shape {
@@ -145,26 +164,59 @@ body {
   border: 2px solid Chartreuse;
 }
 
-/* error interactivity */
-.error-message-container {
-  color: #B22222;
+/* Interactivity */
+.message-container {
+  text-align: center;
   font-size:  0.875rem;
-  text-align: left;
   line-height: 1.5;
-  margin-top: 1rem;
-  margin-left: 2rem;
-  /* max-height: 14vh;
-  overflow: scroll; */
+  margin: 3rem 0 0 2rem;
+  max-height: 65vh;
+  overflow-y: auto;
 }
 
-.error-blink {
-  border: 1px solid red;
-  -webkit-animation: blink .5s step-end infinite alternate;
+.output {
+  margin-top: 3rem;
+}
+
+.errorMessage {
+  color: #B22222;
+}
+
+.disabled {
+  color: #DCDCDC;
+}
+
+.message-blink {
+  border: 2px solid Chartreuse;
+  animation: blink 1s linear infinite;
 }
 
 /* NEW FUNCTIONALITY */
+.modal-dialog {
+	margin-top: 80px;
+}
 
-.line {
-  position: absolute;
-  background-color: #000000;
+.modal-dialog .modal-content {
+	padding: 20px;
+	border-radius: 0;
+	border: none;
+}
+
+.modal-body img {
+  max-width: 100%;
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+#undo {
+  background-color: #B22222;
+  border: none;
+}
+
+#undo:hover {
+  color: #B22222;
+  background-color: white;
+  border: 1px solid #B22222;
 }
