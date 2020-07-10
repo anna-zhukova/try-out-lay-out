@@ -5,8 +5,8 @@ var selected = null;
 // returns top and left of the center of the canvas
 function calculateCenter(elem) {
   return {
-    top:  canvas.getBoundingClientRect().height / 2 + canvas.getBoundingClientRect().top - elem.getBoundingClientRect().height / 2,
-    left: window.innerWidth / 2 - elem.getBoundingClientRect().width / 2
+    top:  canvas.offsetTop + canvas.getBoundingClientRect().height / 2 - elem.getBoundingClientRect().height / 2,
+    left: canvas.offsetLeft + canvas.getBoundingClientRect().width / 2 - elem.getBoundingClientRect().width / 2
   }
 }
 
@@ -32,11 +32,11 @@ function createMovableCopy(item) {
   });
 
   function copyItem(item) {
-    var newElement;
+    let newElement;
     // https://www.youtube.com/watch?v=zjYgz50E0mA
 
     // create copy for image, logo or shape
-    if (item.classList.contains("image") || item.classList.contains("logo")) {
+    if (item.classList.contains("logo") || item.classList.contains("image")) {
       newElement = item.cloneNode(true);
 
       // remove original classes
@@ -58,36 +58,38 @@ function createMovableCopy(item) {
 
       } else {
         newElement = document.createElement("img");
-        newElement.style.width = "200px"
         switch (true) {
           case item.classList.contains("header"):
             newElement.src = "images/text/heading-b.png";
-            newElement.style.height = "52px"
-            newElement.classList.add("header");
+            newElement.style.width = "220px";
+            newElement.style.height = "42px";
+            newElement.classList.add("heading");
             break;
           case item.classList.contains("left-sub"):
             newElement.src = "images/text/l-sub-b.png";
-            newElement.style.height = "39px"
+            newElement.style.width = "390px";
+            newElement.style.height = "76px";
             newElement.classList.add("left");
             newElement.classList.add("sub");
             break;
           case item.classList.contains("center-sub"):
             newElement.src = "images/text/c-sub-b.png";
-            newElement.style.height = "39px"
+            newElement.style.width = "390px";
+            newElement.style.height = "76px";
             newElement.classList.add("center");
             newElement.classList.add("sub");
             break;
           case item.classList.contains("left-body"):
             newElement.src = "images/text/l-body-b.png";
-            newElement.style.width = "300px"
-            newElement.style.height = "117px"
+            newElement.style.width = "586px";
+            newElement.style.height = "198px";
             newElement.classList.add("left");
             newElement.classList.add("body");
             break;
           case item.classList.contains("center-body"):
             newElement.src = "images/text/c-body-b.png";
-            newElement.style.width = "300px"
-            newElement.style.height = "117px"
+            newElement.style.width = "586px";
+            newElement.style.height = "198px";
             newElement.classList.add("center");
             newElement.classList.add("body");
             break;
@@ -102,7 +104,7 @@ function createMovableCopy(item) {
     canvas.appendChild(newElement);
 
     // place new element in the center of the canvas
-    var pos = calculateCenter(newElement);
+    let pos = calculateCenter(newElement);
     newElement.style.top = pos.top + "px";
     newElement.style.left = pos.left + "px";
 
@@ -156,7 +158,7 @@ function recolorSelected(button) {
       }
       evaluate();
 
-    } else {
+    } else if (selected.classList.contains("shape")) {
       // recolor item depending on which recolor button was clicked
       switch (button.id) {
         case "green":
@@ -194,23 +196,23 @@ var width = canvas.style.width;
 var height = canvas.style.height;
 
 var landscape = document.querySelector("#landscape");
-landscape.addEventListener("click", () => {
+var square = document.querySelector("#square");
+var portrait = document.querySelector("#portrait");
+
+landscape.onclick = function() {
   canvas.style.width = width;
   evaluate();
-});
+};
 
-var square = document.querySelector("#square");
-square.addEventListener("click", () => {
+square.onclick = function() {
   canvas.style.width = height;
   evaluate();
-});
+};
 
-var portrait = document.querySelector("#portrait");
-portrait.addEventListener("click", () => {
-  // canvas.style.width =  701 + "px";
-  canvas.style.width = vwToPixels(28);
+portrait.onclick = function() {
+  canvas.style.width = vwToPixels(32);
   evaluate();
-});
+};
 
 /* BUTTONS */
 var resetButton = document.getElementById("reset");
@@ -218,24 +220,24 @@ var deleteButton = document.getElementById("delete");
 var frontButton = document.getElementById("front");
 
 
-resetButton.addEventListener("click", () => {
+resetButton.onclick = function() {
   canvas.innerHTML = "";
   selected = null;
   evaluate();
-});
+};
 
-deleteButton.addEventListener("click", () => {
+deleteButton.onclick = function() {
   if (selected === null) {
     alert("You haven't selected any elements.");
   } else {
-    var toDelete = selected; // da sa na 2 riadky?
+    let toDelete = selected; // da sa na 2 riadky?
     selected = null;
     toDelete.remove();
   }
   evaluate();
-});
+};
 
-frontButton.addEventListener("click", () => {
+frontButton.onclick = function() {
   if (selected === null) {
     alert("You haven't selected any elements.");
   } else {
@@ -243,4 +245,4 @@ frontButton.addEventListener("click", () => {
     canvas.appendChild(selected);
   }
   evaluate();
-});
+};
