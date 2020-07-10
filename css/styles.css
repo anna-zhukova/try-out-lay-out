@@ -1,88 +1,32 @@
 body {
   color: black;
-  font-family: 'VT323', monospace;
+  font-family: 'Karla', sans-serif;
+  padding: 0;
   margin: 0;
   text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Karla', sans-serif;
   font-size: 2.5rem;
   padding-bottom: 2rem;
-
-}
-
-p {
-  font-family: 'Karla';
-}
-
-
-/* Headings */
-.ttl-heading {
-  font-family: 'Karla', sans-serif;
-  font-size: 3.5rem;
-  font-weight: bold;
-  line-height: 1.5;
-  /* margin-top: 5%; */
-}
-
-#instructions li {
-  font-family: 'Karla', sans-serif;
-  margin-left: 12.5rem;
-}
-
-.section-heading {
-  font-size: 3rem;
-  line-height: 1.5;
-}
-
-/* Containers */
-.container-fluid {
-  /* margin: 7% 15%; */
-}
-
-/* Sections */
-.ttl-section {
-  padding-bottom: 5%;
-}
-
-.black-section {
-  /* background-color: black; */
-  background-color: #c3c19e;
-  color: white;
-}
-
-.white-section {
-  background-color: white;
-  /* background-color: #c3c19e; */
-  color: black;
 }
 
 /* Navigation Bar */
 .navbar {
-  padding: 2.5rem 0 4.5rem;
+  padding: 2.5rem 0 3.5rem;
   text-align: center;
 }
 
-.nav-app {
-  padding: 1rem 0 1.5rem;
-}
-
+/* spacing between links */
 .nav-item {
   padding: 0 18px;
 }
 
+/* links styling */
 .nav-link {
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
-}
-
-.menu {
   color: black;
-}
-
-.menu-social {
-  color: white;
 }
 
 .nav-link:hover {
@@ -90,28 +34,19 @@ p {
 }
 
 /* Title Section */
-/* #title .container-fluid {
-  margin: 3% 15% 7%;
-  text-align: center;
-} */
 .ttl-img {
-  /* margin-top: 5.5rem; */
-  /* position: absolute;
-  bottom: 24%;
-  left: 25%;
-  margin-top: auto;*/
-  z-index: 1;
-  margin: auto;
-  margin-top: 80px;
-  height: 35rem;
+  height: 15rem;
 }
 
 .quote {
   font-family: 'Montserrat', sans-serif;
-  margin: 7% 0 3%;
+  margin-top: 5%;
 }
 
+
+/* Buttons */
 .bttn {
+  font-family: 'VT323', monospace;
   color: white;
   background-color: black;
   border-radius: 0;
@@ -123,36 +58,19 @@ p {
   background-color: white;
 }
 
-#green, #green:hover {
-  background-color: #006400;
+.ttl-bttn {
+  border: 1px solid black;
 }
 
-#yellow, #yellow:hover {
-  background-color: #EEB868;
-}
-
-#light, #light:hover {
-  background-color: #4682B4;
-}
-
-#dark, #dark:hover {
-  background-color: #083D77;
-}
-
-.bttn-inverse {
+.inverse {
   color: black;
   background-color: white;
-  border-radius: 0;
-  margin: 5% 3% 5% 0;
+  border: 1px solid black;
 }
 
-.bttn-inverse:hover {
+.inverse:hover {
   color: white;
   background-color: black;
-}
-
-.dwnl-button:hover {
-  background-color: white;
 }
 
 .clear, .clear:hover {
@@ -160,61 +78,8 @@ p {
   background-color: rgba(0, 0, 0, 0);
 }
 
-
-
-/* Testimonila Section */
-#testimonials {
-  background-color: #ef8172;
-}
-
-.tstm-text {
-  font-size: 3rem;
-  line-height: 1.5;
-}
-
-.tstm-img {
-  border-radius: 100%;
-  margin: 20px;
-  width: 10%;
-}
-
-/* Press Section */
-#press {
-  background-color: #ef8172;
-  padding-bottom: 3%;
-}
-
-.press-logo {
-  margin: 20px 20px 50px;
-  width: 15%;
-}
-
-/* Pricing Section */
-#pricing {
-  padding: 100px;
-}
-
-.prc-col {
-  padding: 3% 2%;
-}
-
-.price-dog {
-  font-size: 1.5rem;
-}
-
-.price-text {
-  font-size: 3rem;
-  line-height: 1.5;
-}
-
-/* Footer */
-.social-icon {
-  color: #8f8f8f;
-  margin: 20px 10px;
-}
-
 /* Title Section on mobile*/
-@media (max-width: 1028px) {
+/* @media (max-width: 1028px) {
   #title {
     text-align: center;
   }
@@ -223,4 +88,4 @@ p {
     position: static;
     transform: rotate(0);
   }
-}
+} */
