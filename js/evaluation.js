@@ -447,11 +447,12 @@ function evaluateComposition(objects, warnings, errors) {
               if (background.classList.contains("pattern")) {
                 warnings.add(15);
                 errors.push(type);
-              }
-              let composition = checkImageComposition(type, background);
-              if (composition !== 0) {
-                warnings.add(composition);
-                errors.push(type);
+              } else if (background.classList.contains("contrast")) {
+                let composition = checkImageComposition(type, background);
+                if (composition !== 0) {
+                  warnings.add(composition);
+                  errors.push(type);
+                }
               }
               warnings.add(14);
             }
@@ -474,38 +475,6 @@ function evaluateComposition(objects, warnings, errors) {
   if (balance !== 0) {
     warnings.add(balance);
   }
-}
-
-////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////// TODO /////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-// return true if one of the sides is smaller than minimum
-function checkSize(width, height, minWidth, minHeight) {
-  console.log("actual"+ width + " " + height)
-  console.log("min"+ minWidth + " " + minHeight)
-  return (width < minWidth || height < minHeight)
-}
-
-// return false if text size is too small
-function isReadable(text) {
-  let small = false;
-
-  let objWidth = text.getBoundingClientRect().width / window.innerWidth * 100;
-  let objHeight = text.getBoundingClientRect().height / window.innerWidth * 100;
-
-  console.log("pixels size " + text.getBoundingClientRect().width + " " + text.getBoundingClientRect().height)
-
-  if (text.classList.contains("heading")) {
-    small = checkSize(objWidth, objHeight, 6.63, 1.25);
-
-  } else if (text.classList.contains("sub")) {
-    small = checkSize(objWidth, objHeight, 17.19, 3.3);
-
-  } else if (text.classList.contains("body")) {
-    small = checkSize(objWidth, objHeight, 25.92, 8.57);
-  }
-  return !small;
 }
 
 //****************************************************************************************************************************************
@@ -644,6 +613,33 @@ function checkImageComposition(type, image) {
   return 12;
 }
 
+// return true if one of the sides is smaller than minimum
+function checkSize(width, height, minWidth, minHeight) {
+  console.log("actual"+ width + " " + height)
+  console.log("min"+ minWidth + " " + minHeight)
+  return (width < minWidth || height < minHeight)
+}
+
+// return false if text size is too small
+function isReadable(text) {
+  let small = false;
+
+  let objWidth = text.getBoundingClientRect().width / window.innerWidth * 100;
+  let objHeight = text.getBoundingClientRect().height / window.innerWidth * 100;
+
+  console.log("pixels size " + text.getBoundingClientRect().width + " " + text.getBoundingClientRect().height)
+
+  if (text.classList.contains("heading")) {
+    small = checkSize(objWidth, objHeight, 6.63, 1.25);
+
+  } else if (text.classList.contains("sub")) {
+    small = checkSize(objWidth, objHeight, 17.19, 3.3);
+
+  } else if (text.classList.contains("body")) {
+    small = checkSize(objWidth, objHeight, 25.92, 8.57);
+  }
+  return !small;
+}
 
 // ALIGNMENT
 // returns 19 if the alignment is inconsistent
