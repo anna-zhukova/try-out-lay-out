@@ -318,11 +318,11 @@ function evaluate() {
     message += "Your canvas is empty!";
   } else if (objects.length === 1) {
 
-    let border = isOnTheBorder(objects[0].getBoundingClientRect());
-    if (border !== 0) {
-      warnings.add(border);
-      errors.push(objects[0]);
-    }
+    // let border = isOnTheBorder(objects[0].getBoundingClientRect());
+    // if (border !== 0) {
+    //   warnings.add(border);
+    //   errors.push(objects[0]);
+    // }
 
     if (objects[0].classList.contains("text")) {
       if (!isReadable(objects[0])) {
@@ -366,7 +366,9 @@ function evaluateComposition(objects, warnings, errors) {
     let border = isOnTheBorder(objects[i].getBoundingClientRect());
     if (border !== 0) {
       warnings.add(border);
-      errors.push(objects[i]);
+      if (objects[i].classList.contains("text") || objects[i].classList.contains("logo")) {
+        errors.push(objects[i]);
+      }
     }
 
     if (objects[i].classList.contains("text")) {
@@ -465,7 +467,7 @@ function evaluateComposition(objects, warnings, errors) {
   }
 
   if (texts.length > 0) {
-    let inconsistentAlignment = isCorrectlyAligned(texts);
+    let inconsistentAlignment = isConsistentlyAligned (texts);
     if (inconsistentAlignment !== 0) {
       warnings.add(inconsistentAlignment);
     }
@@ -643,7 +645,7 @@ function isReadable(text) {
 
 // ALIGNMENT
 // returns 19 if the alignment is inconsistent
-function isCorrectlyAligned(texts) {
+function isConsistentlyAligned (texts) {
   let center = false;
   let left = false;
 
