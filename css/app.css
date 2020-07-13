@@ -1,38 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@anna-zhukova 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-anna-zhukova
-/
-try-out-lay-out
-1
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-try-out-lay-out/css/app.css
-@anna-zhukova
-anna-zhukova Update app.css
-Latest commit 33dc30e 3 days ago
- History
- 1 contributor
-222 lines (182 sloc)  3.2 KB
-  
 /* disable scrolling */
 /* https://stackoverflow.com/questions/28411499/disable-scrolling-on-body */
 /* if larger than 992px */
@@ -80,6 +45,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0;
+  margin: 1% 0;
 }
 
 /* Spacing items in the menu */
@@ -255,15 +221,18 @@ body {
   background-color: white;
   border: 1px solid #B22222;
 }
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
