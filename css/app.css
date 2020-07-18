@@ -1,0 +1,240 @@
+/* disable scrolling */
+/* https://stackoverflow.com/questions/28411499/disable-scrolling-on-body */
+/* if larger than 992px */
+@media only screen and (min-width: 992px) {
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@keyframes blink {
+  0%{opacity: .4;}
+  50%{opacity: .7;}
+  100%{opacity: 1;}
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+/* https://stackoverflow.com/questions/1776915/how-to-center-absolutely-positioned-element-in-div */
+/* .center-content {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+} */
+
+/* MENU STYLING */
+.logo {
+  cursor: copy;
+}
+
+/* Styling items in the menu */
+.menu-item {
+  display: inline-block;
+  height: 2rem;
+  margin: auto 1rem;
+}
+
+/* Centering items in the menu horizontally */
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 2% 0 1%;
+}
+
+/* Spacing items in the menu */
+.dropdown-toggle {
+  margin-right: 0.7rem;
+}
+
+/* Palette colors */
+.recolor-bttn {
+  height: 5%;
+}
+
+#green, #green:hover {
+  background-color: #006400;
+}
+
+#yellow, #yellow:hover {
+  background-color: #EEB868;
+}
+
+#light, #light:hover {
+  background-color: #4682B4;
+}
+
+#dark, #dark:hover {
+  background-color: #083D77;
+}
+
+/* Canvas format buttons */
+.canvasRatio, .canvasRatio:hover {
+  background-color: black;
+  font-size: 3rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+#landscape {
+  width: 3rem;
+}
+
+#portrait {
+  height: 3rem;
+}
+
+/* Items manipulating icons */
+#delete {
+  font-size: 2rem;
+}
+
+#reset {
+  bottom: 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 25%;
+}
+
+
+/* dropdown styling */
+.dropdown-menu {
+  border-radius: 0;
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.dropdown-item, .dropdown-item:hover {
+  cursor: copy;
+}
+
+.dropdown-item.shape-menu, .dropdown-item.shape-menu:hover {
+  max-width: 100px;
+  margin: 5px auto 5px;
+}
+
+/* STYLING ELEMENTS IN WORKING SPACE */
+
+#canvas {
+  background-color: white;
+  pointer-events: none;
+  touch-action: none;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.canvas-item {
+  cursor: default;
+  pointer-events: auto;
+  position: absolute;
+  touch-action: none;
+  user-select: none;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  box-sizing: border-box;
+}
+
+.canvas-item.image {
+  width: 50%;
+}
+
+.canvas-item.logo{
+  width: 15%;
+}
+
+.shape {
+  background-color: black;
+  height: 3rem;
+  width: 3rem;
+}
+
+.ellipse {
+  border-radius: 50%;
+}
+
+.canvas-item:hover {
+  border: 2px solid Chartreuse;
+  opacity: 0.8;
+}
+
+/* Interactivity */
+.message-container {
+  text-align: center;
+  font-size:  0.875rem;
+  line-height: 1.5;
+  margin: 3rem 0 0 2rem;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+.output {
+  margin-top: 3rem;
+}
+
+.errorMessage {
+  color: #B22222;
+}
+
+.disabled {
+  color: #DCDCDC;
+}
+
+.message-blink {
+  border: 2px solid #B22222;
+  animation: blink 2s linear infinite;
+}
+
+/* NEW FUNCTIONALITY */
+.modal-dialog {
+	margin-top: 80px;
+}
+
+.modal-dialog .modal-content {
+	padding: 20px;
+	border-radius: 0;
+	border: none;
+}
+
+.modal-body img {
+  max-width: 100%;
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+#undo {
+  background-color: #B22222;
+  border: none;
+}
+
+#undo:hover {
+  color: #B22222;
+  background-color: white;
+  border: 1px solid #B22222;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
