@@ -48,117 +48,121 @@
 
   <h1>Gallery</h1>
 
+  <div id="bttnContainer">
+  <button class="btn btn-sm bttn inverse" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn btn-sm bttn inverse" onclick="filterSelection('correct')"> Correct</button>
+  <button class="btn btn-sm bttn inverse" onclick="filterSelection('incorrect')"> Incorrect</button>
+</div>
+
   <div class="container">
     <div class="row">
 
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 correct">
         <img src="images/gallery/1.png" onclick="openModal(); currentImage(1)" class="hover-shadow w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 correct">
         <img src="images/gallery/2.png" onclick="openModal(); currentImage(2)" class="hover-shadow  w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 incorrect">
         <img src="images/gallery/3.png" onclick="openModal(); currentImage(3)" class="hover-shadow  w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 incorrect">
         <img src="images/gallery/4.png" onclick="openModal(); currentImage(4)" class="hover-shadow  w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 correct">
         <img src="images/gallery/5.png" onclick="openModal(); currentImage(5)" class="hover-shadow  w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 correct">
         <img src="images/gallery/6.png" onclick="openModal(); currentImage(6)" class="hover-shadow  w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 incorrect">
         <img src="images/gallery/7.png" onclick="openModal(); currentImage(7)" class="hover-shadow  w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 incorrect">
         <img src="images/gallery/8.png" onclick="openModal(); currentImage(8)" class="hover-shadow  w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 correct">
         <img src="images/gallery/9.png" onclick="openModal(); currentImage(9)" class="hover-shadow  w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 correct">
         <img src="images/gallery/10.png" onclick="openModal(); currentImage(10)" class="hover-shadow  w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 incorrect">
         <img src="images/gallery/11.png" onclick="openModal(); currentImage(11)" class="hover-shadow  w-100">
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3 incorrect">
         <img src="images/gallery/12.png" onclick="openModal(); currentImage(12)" class="hover-shadow  w-100">
       </div>
 
-
-
     </div>
-</div>
+  </div>
 
-    <!-- The Modal/Lightbox -->
-    <div id="gallery" class="modal">
-      <span class="close cursor" onclick="closeModal()">&times;</span>
-      <div class="modal-content">
+  <!-- The Modal/Lightbox -->
+  <div id="gallery" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
 
-        <div class="image">
-          <img src="images/gallery/1.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/2.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/3.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/4.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/5.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/6.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/7.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/8.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/9.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/10.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/11.png" style="width:100%">
-        </div>
-
-        <div class="image">
-          <img src="images/gallery/12.png" style="width:100%">
-        </div>
-
-        <!-- Next/previous controls -->
-        <a class="prev" onclick="changeImage(-1)"><i class="fas fa-angle-left"></i></a>
-        <a class="next" onclick="changeImage(1)"><i class="fas fa-angle-right"></i></a>
+      <div class="image">
+        <img src="images/gallery/1.png" style="width:100%">
       </div>
+
+      <div class="image">
+        <img src="images/gallery/2.png" style="width:100%">
+      </div>
+
+      <div class="image">
+        <img src="images/gallery/3.png" style="width:100%">
+      </div>
+
+      <div class="image">
+        <img src="images/gallery/4.png" style="width:100%">
+      </div>
+
+      <div class="image">
+        <img src="images/gallery/5.png" style="width:100%">
+      </div>
+
+      <div class="image">
+        <img src="images/gallery/6.png" style="width:100%">
+      </div>
+
+      <div class="image">
+        <img src="images/gallery/7.png" style="width:100%">
+      </div>
+
+      <div class="image">
+        <img src="images/gallery/8.png" style="width:100%">
+      </div>
+
+      <div class="image">
+        <img src="images/gallery/9.png" style="width:100%">
+      </div>
+
+      <div class="image">
+        <img src="images/gallery/10.png" style="width:100%">
+      </div>
+
+      <div class="image">
+        <img src="images/gallery/11.png" style="width:100%">
+      </div>
+
+      <div class="image">
+        <img src="images/gallery/12.png" style="width:100%">
+      </div>
+
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="changeImage(-1)"><i class="fas fa-angle-left"></i></a>
+      <a class="next" onclick="changeImage(1)"><i class="fas fa-angle-right"></i></a>
     </div>
+  </div>
 
 
-    <!-- Bootstrap Scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <!-- My Scripts -->
-    <script src="js/gallery.js" charset="utf-8"></script>
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- My Scripts -->
+  <script src="js/gallery.js" charset="utf-8"></script>
 </body>
 
 </html>
